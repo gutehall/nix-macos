@@ -100,21 +100,6 @@ tf-files() {
     echo -e "terraform {\nrequired_version = \">= 0.12\"\n}" > version.tf
 }
 
-# Dev box
-dup() { aws ec2 start-instances --instance-id i-0ae3c7ca54cc02e0e }
-ddown() { aws ec2 stop-instances --instance-id i-0ae3c7ca54cc02e0e }
-dssh() { ssh -i "/Users/mathias/.ssh/controltower.pem" ubuntu@63.33.246.64 }
-
-# Hashi Dev
-hashi-up() { aws ec2 start-instances --instance-id i-0ec9618c651a758ac}
-hashi-down() { aws ec2 stop-instances --instance-id i-0ec9618c651a758ac }
-hashi-ssh() { ssh -i "/Users/mathias/.ssh/controltower.pem" ec2-user@34.249.214.199 }
-
-# Vagrant
-vgup() { cd /Users/mathias/Development/Devbox/vagrant-devbox && vagrant up }
-vgdown() { cd /Users/mathias/Development/Devbox/vagrant-devbox && vagrant halt }
-vgssh() { cd /Users/mathias/Development/Devbox/vagrant-devbox && vagrant ssh }
-
 autoload -Uz compinit
   compinit
 
