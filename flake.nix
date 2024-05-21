@@ -14,6 +14,7 @@
 
   outputs = inputs@{ self, nix-darwin, home-manager, nixpkgs, mac-app-util }:
     {
+      # Private laptop
       darwinConfigurations."private" = nix-darwin.lib.darwinSystem {
         modules = [
           ./hosts/private/configuration.nix
@@ -30,6 +31,7 @@
         ];
       };
 
+      # Work laptop
       darwinConfigurations."work" = nix-darwin.lib.darwinSystem {
         modules = [
           ./hosts/work/configuration.nix
@@ -42,6 +44,23 @@
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
             home-manager.users.mathias.imports = [ ./hosts/work/home.nix mac-app-util.homeManagerModules.default ];
+          }
+        ];
+      };
+
+      # Development server
+      darwinConfigurations."server" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./hosts/private/configuration.nix
+
+          mac-app-util.darwinModules.default
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.verbose = true;
+            home-manager.users.mathias.imports = [ ./hosts/server/home.nix mac-app-util.homeManagerModules.default ];
           }
         ];
       };

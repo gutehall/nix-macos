@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./direnv
     ./git
     ./zsh
     ./vim

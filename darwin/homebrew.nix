@@ -10,6 +10,7 @@
     "cleanmymac"
     "notion"
     "parallels"
+    "vmware-fusion"
     "raycast"
     "transmission"
     "transmit"
