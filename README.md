@@ -1,6 +1,6 @@
 # nix-macos
 
-This repo contains my config for Nix on macOS.
+This repo contains my config for Nix on macOS. The code is still work in progress so there will be bugs, sorry about that.
 
 ## Installation
 
