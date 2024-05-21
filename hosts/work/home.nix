@@ -46,5 +46,7 @@
       spotify
       cyberduck
       google-chrome
+      webex
+      zoom-us
     ];
 }

@@ -6,12 +6,12 @@
     ./direnv
     ./git
     ./zsh
+    ./vim
   ];
 
   config = {
-    home.stateVersion = "23.05"; # Please read the comment before changing.
+    home.stateVersion = "23.11";
 
-    # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
     fonts.fontconfig.enable = true;

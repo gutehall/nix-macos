@@ -9,6 +9,11 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
+  programs.git.enable = true;
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
 
   system.stateVersion = 4;
 
