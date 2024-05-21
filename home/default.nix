@@ -5,6 +5,7 @@
     ./git
     ./zsh
     ./vim
+    ./vscode
   ];
 
   config = {
