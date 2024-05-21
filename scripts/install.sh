@@ -7,6 +7,22 @@ SOURCES_PATH=./sources
 NIXOS_CONFIG_PATH=~/nixos
 BACKUP_PATH=/etc/nixos.bak
 
+# Install Xcode Command Line Tools
+if ! xcode-select -p &>/dev/null; then
+    echo "Installing Xcode Command Line Tools..."
+    xcode-select --install
+    # Wait until the installation is complete
+    until xcode-select -p &>/dev/null; do
+        sleep 5
+    done
+fi
+
+# Install Rosetta (if on Apple Silicon)
+if [[ "$(uname -m)" == "arm64" ]]; then
+    echo "Installing Rosetta..."
+    /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+fi
+
 # Remove .oh-my-zsh if it exists
 if [ -d "$HOME/.oh-my-zsh" ]; then
     rm -rf "$HOME/.oh-my-zsh"
@@ -41,7 +57,7 @@ sudo mv /etc/nixos "$BACKUP_PATH"
 sudo ln -s "$NIXOS_CONFIG_PATH" /etc/nixos
 
 # Rebuild NixOS
-sudo nixos-rebuild switch
+# sudo nixos-rebuild switch
 
 # Wait for parallel processes to finish
 wait
