@@ -50,6 +50,6 @@
   nix.optimise.interval.Hour = 4;
 
   # Enable support for Linux builds
-  nix.linux-builder.enable = true;
-  nixpkgs.config.allowUnfree = true;
+  # nix.linux-builder.enable = true;
+  # nixpkgs.config.allowUnfree = true;
 }

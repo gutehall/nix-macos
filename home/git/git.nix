@@ -10,8 +10,6 @@
 
     ignores = [
       ".DS_Store"
-      ".direnv"
-      ".jj"
     ];
 
     difftastic = {
