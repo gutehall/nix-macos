@@ -5,6 +5,8 @@
     ../../home
   ];
 
+  homebrew = import ./homebrew.nix // { enable = true; };
+
   home.packages = with pkgs; [
       vim
       openssh
@@ -45,5 +47,6 @@
       cyberduck
       minecraft
       google-chrome
+      transmission
     ];
 }

@@ -5,6 +5,8 @@
     ../../home
   ];
 
+  homebrew = import ./homebrew.nix // { enable = true; };
+
   home.packages = with pkgs; [
       vim
       openssh
@@ -36,5 +38,8 @@
       tailscale
       iterm2
       utm
+      virtualbox
+      postman
+      newman
     ];
 }

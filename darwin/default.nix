@@ -1,8 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  homebrew = import ./homebrew.nix // { enable = true; };
-
   services.nix-daemon.enable = true;
 
   nix.settings.experimental-features = "nix-command flakes";
