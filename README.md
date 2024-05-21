@@ -6,14 +6,16 @@ This repo contains my config for Nix on macOS.
 
 To set up your system using this configuration, you can use the following commands.
 
-First, run:
+First, run in order to activate the configuration:
 
 ```bash
-nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake ~/.config/nix
+nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake ~/<WhereTheConfigIsLocated>
 ```
 
+Then rebuild the system:
+
 ```bash
-darwin-rebuild switch --flake ~/.config/nix
+darwin-rebuild switch --flake ~/<WhereTheConfigIsLocated>
 ```
 
 ## Overview
