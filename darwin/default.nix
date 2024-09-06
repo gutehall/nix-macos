@@ -6,7 +6,13 @@
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.config.allowUnfree = true;
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+        switch = "darwin-rebuild switch --flake ~/.config/nix";
+    };
+  };
+  
   programs.git.enable = true;
 
   fonts.packages = with pkgs; [
